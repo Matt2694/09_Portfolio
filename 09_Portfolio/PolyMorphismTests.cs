@@ -20,14 +20,14 @@ namespace _09_Portfolio
         [TestMethod]
         public void InstanceOf()
         {
-            Assert.IsTrue(stockHP is Asset);
+            Assert.IsTrue(stockHP is IAsset);
         }
 
         [TestMethod]
         public void CD()
         {
             SavingsAccount cd = new SavingsAccount("Account 55555", 1000, 4.2);
-            Assert.IsTrue(cd is Asset);
+            Assert.IsTrue(cd is IAsset);
             Assert.AreEqual("SavingsAccount[value=1000.0,interestRate=4.2]", cd.ToString());
             Assert.AreEqual(1000, cd.GetValue());
             Assert.AreEqual(4.2, cd.InterestRate);
@@ -47,7 +47,7 @@ namespace _09_Portfolio
         {
             SavingsAccount cd = new SavingsAccount("Account 55555", 1000, 3.2);
 
-            Asset[] portfolio = new Asset[3];
+            IAsset[] portfolio = new IAsset[3];
             portfolio[0] = stockHP;
             portfolio[1] = stockIBM;
             portfolio[2] = cd;
