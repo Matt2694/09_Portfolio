@@ -9,16 +9,19 @@ namespace _09_Portfolio{
         public string Symbol { get; set; }
 
         public Stock() { }
+
         public Stock(string symbol, double pricePerShare, double numShares){
 
             Symbol = symbol;
             PricePerShare = pricePerShare;
             NumShares = numShares;
         }
+
         public double GetValue(){
 
             return PricePerShare * NumShares;
         }
+
         public static double TotalValue(IAsset[] stocks){
 
             double total = 0;
@@ -27,15 +30,18 @@ namespace _09_Portfolio{
             }
             return total;
         }
+
         public override string ToString(){
 
             string format = "Stock[symbol=" + Symbol + ",pricePerShare=" + PricePerShare + ",numShares=" + NumShares + "]";
             return format;
         }
+
         public override int GetHashCode(){
 
             return base.GetHashCode();
         }
+
         public override bool Equals(object obj){
 
             Stock Compareobject = (Stock)obj;

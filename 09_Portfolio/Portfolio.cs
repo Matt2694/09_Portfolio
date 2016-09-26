@@ -11,10 +11,12 @@ namespace _09_Portfolio{
 
             stocks = new List<IAsset>();
         }
+
         public Portfolio(List<IAsset> stocks){
 
             this.stocks = stocks;
         }
+
         internal double GetTotalValue(){
 
             double total = 0;
@@ -23,10 +25,12 @@ namespace _09_Portfolio{
             }
             return total;
         }
+
         internal void AddAsset(IAsset classInstance){
 
             stocks.Add(classInstance);
         }
+
         public double GetValue(){
 
             throw new NotImplementedException();
