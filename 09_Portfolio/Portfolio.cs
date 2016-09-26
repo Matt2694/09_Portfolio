@@ -1,38 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace _09_Portfolio
-{
-    internal class Portfolio : IAsset
-    {
+namespace _09_Portfolio{
+
+    internal class Portfolio : IAsset{
+
         private List<IAsset> stocks;
 
-        public Portfolio()
-        {
+        public Portfolio(){
+
             stocks = new List<IAsset>();
         }
-        public Portfolio(List<IAsset> stocks)
-        {
+        public Portfolio(List<IAsset> stocks){
+
             this.stocks = stocks;
         }
+        internal double GetTotalValue(){
 
-        internal double GetTotalValue()
-        {
             double total = 0;
-            foreach(IAsset aPart in stocks)
-            {
-                total += aPart.GetValue();
+            foreach(IAsset instance in stocks){
+                total += instance.GetValue();
             }
             return total;
         }
+        internal void AddAsset(IAsset classInstance){
 
-        internal void AddAsset(IAsset classInstance)
-        {
             stocks.Add(classInstance);
         }
+        public double GetValue(){
 
-        public double GetValue()
-        {
             throw new NotImplementedException();
         }
     }
