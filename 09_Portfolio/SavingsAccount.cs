@@ -28,7 +28,7 @@ namespace _09_Portfolio
         }
         public override string ToString()
         {
-            string format = string.Format("SavingsAccount[value={0:0000.0},interestRate=" + InterestRate + "]", Value);
+            string format = string.Format("SavingsAccount[value={0:0.0},interestRate={1:0.0}]", Value, InterestRate);
             return format;
         }
     }
