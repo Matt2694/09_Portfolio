@@ -36,9 +36,9 @@ namespace _09_Portfolio{
         public override bool Equals(object obj){
 
             Stock Compareobject = (Stock)obj;
-            return  (Compareobject.Symbol == this.Symbol) &&
-                    (Compareobject.PricePerShare == this.PricePerShare) &&
-                    (Compareobject.NumShares == this.NumShares);
+            return  (Compareobject.Symbol == Symbol) &&
+                    (Compareobject.PricePerShare == PricePerShare) &&
+                    (Compareobject.NumShares == NumShares);
         }
     }
 }
