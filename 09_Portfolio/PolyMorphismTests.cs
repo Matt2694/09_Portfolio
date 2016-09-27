@@ -51,7 +51,7 @@ namespace _09_Portfolio
             portfolio[0] = stockHP;
             portfolio[1] = stockIBM;
             portfolio[2] = cd;
-            Assert.AreEqual(9809.1, Stock.TotalValue(portfolio));
+            Assert.AreEqual(9809.1, Portfolio.TotalValue(portfolio));
         }
 
 

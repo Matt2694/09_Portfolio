@@ -35,5 +35,16 @@ namespace _09_Portfolio{
 
             throw new NotImplementedException();
         }
+
+        public static double TotalValue(IAsset[] stocks)
+        {
+
+            double total = 0;
+            foreach (IAsset instance in stocks)
+            {
+                total += instance.GetValue();
+            }
+            return total;
+        }
     }
 }

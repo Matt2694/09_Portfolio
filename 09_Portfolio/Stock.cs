@@ -22,19 +22,10 @@ namespace _09_Portfolio{
             return PricePerShare * NumShares;
         }
 
-        public static double TotalValue(IAsset[] stocks){
-
-            double total = 0;
-            foreach(IAsset instance in stocks){
-                total += instance.GetValue();
-            }
-            return total;
-        }
-
         public override string ToString(){
 
-            string format = "Stock[symbol=" + Symbol + ",pricePerShare=" + PricePerShare + ",numShares=" + NumShares + "]";
-            return format;
+            return  "Stock[symbol=" + Symbol + ",pricePerShare="
+                    + PricePerShare + ",numShares=" + NumShares + "]";
         }
 
         public override int GetHashCode(){
@@ -45,12 +36,9 @@ namespace _09_Portfolio{
         public override bool Equals(object obj){
 
             Stock Compareobject = (Stock)obj;
-            if (Compareobject.Symbol == this.Symbol && Compareobject.PricePerShare == this.PricePerShare && Compareobject.NumShares == this.NumShares){
-                return true;
-            }
-            else{
-                return false;
-            }
+            return  (Compareobject.Symbol == this.Symbol) &&
+                    (Compareobject.PricePerShare == this.PricePerShare) &&
+                    (Compareobject.NumShares == this.NumShares);
         }
     }
 }
